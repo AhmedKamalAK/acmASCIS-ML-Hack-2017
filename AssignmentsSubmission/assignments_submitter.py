@@ -1,4 +1,4 @@
-def submit_assignment(submitted_params, spreadsheetId, rangeName, service):
+def submit_assignment(submitted_params, spreadsheet_id, sheet_range, service):
     values = [
         submitted_params
     ]
@@ -6,5 +6,5 @@ def submit_assignment(submitted_params, spreadsheetId, rangeName, service):
         'values': values
     }
     result = service.spreadsheets().values().append(
-        spreadsheetId=spreadsheetId, range=rangeName,
+        spreadsheetId=spreadsheet_id, range=sheet_range,
         valueInputOption='USER_ENTERED', body=body).execute()
